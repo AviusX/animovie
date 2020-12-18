@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Animovie: <%= movie.Title %></title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/4d7a1b75d6.js" crossorigin="anonymous"></script>
+    <!-- Custom Stylesheet -->
+</head>
+
+<body>
+    <section id="header">
+        <div class="jumbotron py-3">
+            <div id="title" class="container">
+                <div class="row d-flex align-items-center">
+                    <div class="col-2">
+                        <img src="<%= movie.Poster %>" class="w-75">
+                    </div>
+                    <div class="col-10">
+                        <h1 class="display-3 text-left">
+                            <%= movie.Title %> <span class="text-muted">(<%= movie.Year %>)</span>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+            <div id="ratings" class="container text-center my-2">
+                <% if(movie.Ratings[0]) { %>
+                    <button class="btn btn-small btn-outline-warning mx-2">
+                        <i class="fas fa-star"></i> <%= movie.Ratings[0].Value %>
+                    </button>
+                <% } %>
+                <% if(movie.Ratings[1]) { %>
+                    <button class="btn btn-small btn-outline-danger mx-2">
+                        <i class="fas fa-circle"></i> <%= movie.Ratings[1].Value %>
+                    </button>
+                <% } %>
+            </div>
+
+            <div id="basic-info" class="row mt-3 mt-4 mb-2">
+                <div class="container text-center col-4">
+                    <div class="border-bottom border-primary lead pb-2">
+                        <i class="fas fa-exclamation-triangle"></i> <%= movie.Rated %>
+                    </div>
+                </div>
+                <div class="container text-center col-4">
+                    <div class="border-bottom border-primary lead pb-2">
+                        <i class="fas fa-language"></i> <%= movie.Language %>
+                    </div>
+                </div>
+                <div class="container text-center col-4">
+                    <div class="border-bottom border-primary lead pb-2">
+                        <i class="far fa-clock"></i> <%= movie.Runtime %>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="body" class="container border rounded shadow mb-4">
+        <section id="casting" class="lead font-weight-light">
+            <h4 class="h4 my-3">Casting and Production</h4>
+            <p><strong>Director:</strong> <%= movie.Director %></p>
+            <p><strong>Writer(s):</strong> <%= movie.Writer %></p>
+            <p><strong>Cast:</strong> <%= movie.Actors %></p>
+            <p><strong>Production:</strong> <%= movie.Production %></p>
+        </section>
+        <hr>
+        <section id="plot" class="lead">
+            <h4 class="h4 mb-3">Plot</h4>
+            <p><%= movie.Plot %></p>
+        </section>
+        <hr>
+        <section id="awards" class="lead">
+            <h4 class="h4 mb-3">Awards and Nominations</h4>
+            <p><%= movie.Awards %></p>
+        </section>
+        <% if(movie.BoxOffice) { %>
+            <hr>
+            <section id="earnings" class="lead">
+                <h4 class="h4 mb-3">Box Office</h4>
+                <p><%= movie.BoxOffice %></p>
+            </section>
+        <% } %>
+    </section>
+    <section class="container mb-4 text-center">
+        <a href="/" class="btn btn-lg btn-primary mx-2">
+            Go back to Search
+        </a>
+        <a href="https://imdb.com/title/<%=movie.imdbID%>" class="btn btn-lg btn-warning mx-2">
+            <i class="fab fa-imdb"></i> Go to IMDb page
+        </a>
+    </section>
+</body>

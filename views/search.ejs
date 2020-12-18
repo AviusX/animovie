@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html class="h-100">
+
+<head>
+    <meta charset='utf-8'>
+    <title>Animovie</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Google Font- Exo 200 and 300 -->
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@200;300&display=swap" rel="stylesheet">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="search.css">
+</head>
+
+<body class="h-100">
+    <section id="search" class="d-flex flex-column justify-content-center h-100 w-100">
+        <div id="search-bar" class="py-5 align-self-center">
+            <div class="jumbotron text-center w-100 py-2">
+                <h2 class="display-2">Animovie</h1>
+                    <p class="lead my-4"><strong>Search for your favorite movie, TV series or web series to get started!</strong></p>
+            </div>
+
+            <div class="text-center">
+                <form action="/results" method="GET">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-10 col-md-8">
+                                <input type="text" id="search-input" class="form-control form-control-lg" name="searchTerm"
+                                    placeholder="Movie/TV Show Title" autocomplete="off">
+                            </div>
+                            <div class="col-lg-2 col-md-3">
+                                <input type="submit" class="btn btn-lg btn-warning" value="Search">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

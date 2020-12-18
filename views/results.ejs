@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Animovie | Results</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Custom Stylesheet -->
+</head>
+
+<body>
+    <div class="jumbotron text-center">
+        <h1 class="display-3">Search Results</h1>
+    </div>
+
+    <div class="container text-center">
+        <ul class="list-group">
+            <% results.Search.forEach(function(result) { %>
+            <li class="list-group-item text-left">
+                <div class="row">
+                    <div class="col-4">
+                        <img class="w-50" src="<%=result.Poster%>">
+                    </div>
+                    <div class="col-8">
+                        <div id="title" class="h2">
+                                <%= result.Title %> - <strong><%= result.Year %></strong>
+                        </div>
+                        <div id="type" class="lead">
+                            <%= result.Type.charAt(0).toUpperCase() + result.Type.slice(1) %>
+                        </div>
+                        <div class="mt-5">
+                            <a id="more-info-btn" class="btn btn-lg btn-outline-success"
+                                href="movieinfo?movieId=<%=result.imdbID%>">
+                                More Info 
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <% }); %>
+        </ul>
+        <a href="/" class="btn btn-lg btn-primary mt-3 mb-5">Search Again</a>
+    </div>
+
+</body>

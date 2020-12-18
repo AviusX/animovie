@@ -1,0 +1,73 @@
+body {
+    background : url("https://images.unsplash.com/photo-1505775561242-727b7fba20f0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
+    background-repeat : no-repeat;
+    background-position : center center;
+    background-size: cover;
+    font-family : 'Exo', sans-serif;
+    font-weight : 200;
+}
+
+#search-bar {
+    background : rgba(92, 92, 92, 0.99);
+    width : 50%;
+    box-shadow : 0 0 10px #c06738;
+    padding : 1.5rem;
+    border-radius : 10px;
+}
+
+#footer {
+    position : absolute;
+    bottom : 10px;
+    right : 30px;
+}
+
+.jumbotron {
+    background : none;
+    color : #c9c9c9;
+    letter-spacing : 0.15em;
+}
+
+.form-control {
+    background-color : #4d4d4d;
+    color : #c9c9c9;
+    border : none;
+}
+
+.form-control:focus {
+    background-color : #4d4d4d;
+    color : #c9c9c9;
+    border-color : white;
+    box-shadow : 0 0 10px #c06738;
+}
+
+.form-control::placeholder {
+    color : #c9c9c9;
+}
+
+@media screen and (max-width: 1275px) {
+    #search-bar {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    #search-bar {
+        width: 90%;
+    }
+	.display-2 {
+    font-size: 4rem;
+	}
+	.lead {
+	    font-size: 1rem;
+	}
+	.btn{
+		margin-top: 10px;
+	    font-size: 1rem;
+	}
+}
+
+@media screen and (max-width: 690px) {
+    #search-bar {
+        width: 99%;
+    }
+}
