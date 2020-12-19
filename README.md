@@ -9,3 +9,6 @@
 **Step 2:** Enter your OMDb API key on `line 7` of `app.js`. As of December 2020, you can get a free one from [here](https://www.omdbapi.com/apikey.aspx).
 
 **Step 3:** Run `node app.js` or `npm start` in the root directory to start the server.
+
+### Hosted Link
+You can check out the hosted version of this project [here](https://avius-omdb.herokuapp.com).
