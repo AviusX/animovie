@@ -29,11 +29,11 @@
                 </div>
             </div>
             <div id="ratings" class="container text-center my-2">
-                <% if(movie.Ratings[0]) { %>
+                <% if(movie.Ratings[0]) { >
                     <button class="btn btn-small btn-outline-warning mx-2">
                         <i class="fas fa-star"></i> <%= movie.Ratings[0].Value %>
                     </button>
-                <% } %>
+                <%  %>
                 <% if(movie.Ratings[1]) { %>
                     <button class="btn btn-small btn-outline-danger mx-2">
                         <i class="fas fa-circle"></i> <%= movie.Ratings[1].Value %>
@@ -49,7 +49,7 @@
                 </div>
                 <div class="container text-center col-4">
                     <div class="border-bottom border-primary lead pb-2">
-                        <i class="fas fa-language"></i> <%= movie.Language %>
+                        <i class="fas fa-language"></i> <%= movie.Runtime %>
                     </div>
                 </div>
                 <div class="container text-center col-4">
