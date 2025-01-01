@@ -18,8 +18,6 @@ app.get("/results", function (req, res) {
             var results = JSON.parse(body);
             if (results.Error) {
                 res.render("notfound");
-                console.log("An error occured! Details below:");
-                console.log(results);
             } else {
                 res.render("results", { results: results });
             }
@@ -36,11 +34,8 @@ app.get("/movieinfo", function (req, res) {
     request(searchURL, function (error, response, body) {
         if (!error && response.statusCode === 200) {
             var movie = JSON.parse(body);
-            console.log(movie);
             if (movie.Error) {
                 res.render("notfound");
-                console.log("An error occured! Details below:");
-                console.log(results);
             } else {
                 res.render("movieinfo", { movie: movie });
             }
